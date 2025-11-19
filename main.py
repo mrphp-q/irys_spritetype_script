@@ -6,7 +6,7 @@ import pyautogui
 import keyboard
 
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Users\YOURNAME\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'C:\Users\HyperBeast_\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
 
 bbox = (200, 400, 1150, 700)
 
@@ -15,9 +15,9 @@ total = 0
 
 
 for i in range(1000):
-    total+=1
     start = time.time()
     while True:
+        total+=1
         if keyboard.is_pressed('esc'):
             print("Остановка по ESC")
             break
@@ -29,13 +29,11 @@ for i in range(1000):
                 if text != "":
                     end = time.time()
                     if end-start >= 15:
-                        total+=1
                         break
                     time.sleep(0.1)
                     pyautogui.write(text, interval=uniform(0.05, 0.15))
                     pyautogui.press("space")
         else:
-            total+=1
             break
     time.sleep(1)
     while True:
